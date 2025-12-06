@@ -14,5 +14,9 @@ app.use(express.json());
 app.use("/api", ragRoutes);
 app.use("/api", pineconeRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
