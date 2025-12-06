@@ -8,15 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
-
 app.use("/api", ragRoutes);
 app.use("/api", pineconeRoutes);
 
-app.get("/", (req, res) => {
+app.get("/status", (req, res) => {
   res.status(200).json({ status: "ok" });
 });
-
-
 
 module.exports = app;
