@@ -11,7 +11,7 @@ app.use(express.json());
 app.use("/api", ragRoutes);
 app.use("/api", pineconeRoutes);
 
-app.get("/status", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).json({ status: "ok" });
 });
 
